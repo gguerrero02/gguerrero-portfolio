@@ -37,6 +37,8 @@
 }
 
 .Menu-button {
+  margin-left: 20px;
+  margin-top: 20px;
   display:fixed;
   position:absolute;
 }
@@ -58,7 +60,7 @@
 
 .Menu-icon {
 
-  height: 20px;
+  height: 15px;
   pointer-events: none;
   
 }
@@ -70,12 +72,32 @@
   
 }
 
+.Sidebar {
+  padding-top:25px;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100vw;
+  height:50px;
 
-@media (min-width: 768px) {
+  display:flex;
+  flex-direction:row;
+  justify-content:space-evenly;
+
+  background: linear-gradient(to bottom, #E8F4FF 50%, transparent 100%);
+
+}
+
+
+@media (min-width: 768px) { /* hide on desktop */
   .Menu-button {
     display:none;
   }
-}
+
+  .Sidebar {
+    display:none;
+  }
+} 
 
 .App-link {
   color: inherit;

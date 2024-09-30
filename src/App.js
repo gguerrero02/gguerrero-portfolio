@@ -1,8 +1,24 @@
+import React, { useState } from 'react';
 import logo from './logo.svg';
-import menu_icon from './menu_icon.svg'
 import './App.css';
 
+function Sidebar() {
+  return (
+    <div className="Sidebar">
+      <a>about</a>
+      <a>projects</a>
+      <a>contact</a>
+    </div>
+  );
+}
+
 function App() {
+  const [sidebarVisible, setSidebarVisible] = useState(false);
+
+  const toggleSidebar = () => {
+    setSidebarVisible(!sidebarVisible);
+  };
+
   return (
     <div className="App">
       <header className="App-header">
@@ -21,7 +37,7 @@ function App() {
         <a className="App-link">Contact</a>
       </header>
       <div className="Menu-button">
-        <button type="button">
+        <button type="button" onClick={toggleSidebar}>
         <svg className="Menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 104.1 81.08">
 
             <g id="Layer_2" data-name="Layer 2">
@@ -34,7 +50,12 @@ function App() {
           </svg>
         </button>
       </div>
+
+      {sidebarVisible && <Sidebar />}
+
       <div className="App-body">
+        <h1>Garrett Guerrero</h1>
+        <h1>Garrett Guerrero</h1>
         <h1>Garrett Guerrero</h1>
         <p> I'm a born and raised Texan that recently moved to New York. 
             At my core, I love to create. Throughout my life I have always had hobbies where
