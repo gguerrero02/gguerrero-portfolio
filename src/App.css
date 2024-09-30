@@ -41,9 +41,10 @@
   position:absolute;
 }
 
-.Menu-button:hover line {
-  stroke: #17293A;
+.Menu-button:active {
+  background-color:none;
 }
+
 .Menu-button:active line {
   stroke: #B0D7FF;
 }
@@ -64,7 +65,7 @@
 
 .Menu-icon line {
   stroke-width: 10px;
-  stroke: #5E88B3;
+  stroke: #17293A;
   stroke-linecap: round;
   
 }
