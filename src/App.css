@@ -1,7 +1,4 @@
-.App {
-  display: flex;
-  flex-direction: row;
-}
+
 
 .App-logo {
   height: 50px;
@@ -17,8 +14,9 @@
 
 .App-header {
   text-align: left;
+  position: fixed;
   float:left;
-  background-color: white;
+  background-color: none;
   min-height: 100vh;
   min-width: fit-content;
 
@@ -38,8 +36,57 @@
   }
 }
 
+.Menu-button {
+  display:fixed;
+  position:absolute;
+}
+
+.Menu-button:hover line {
+  stroke: #17293A;
+}
+.Menu-button:active line {
+  stroke: #B0D7FF;
+}
+
+.Menu-button button {
+  padding: 5px;
+  border:none;
+  background:none;
+  color:none;
+}
+
+.Menu-icon {
+
+  height: 20px;
+  pointer-events: none;
+  
+}
+
+.Menu-icon line {
+  stroke-width: 10px;
+  stroke: #5E88B3;
+  stroke-linecap: round;
+  
+}
+
+
+@media (min-width: 768px) {
+  .Menu-button {
+    display:none;
+  }
+}
+
 .App-link {
-  color: #61dafb;
+  color: inherit;
+  text-decoration:none;
+}
+
+.App-link:hover {
+  color: #17293A
+}
+
+.App-link:active {
+  color: #B0D7FF;
 }
 
 @keyframes App-logo-spin {
@@ -53,4 +100,12 @@
 
 .App-body {
   text-align: center;
+  margin-left: 25vw;
+  margin-right: 5vw;
+}
+
+@media (max-width: 768px) {
+  .App-body {
+    margin-left: 5vw;
+  }
 }
