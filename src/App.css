@@ -1,19 +1,5 @@
-
-
-.App-logo {
-  height: 50px;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-
 .App-header {
-  text-align: left;
+  /* text-align: left; */
   position: fixed;
   float:left;
   background-color: none;
@@ -27,20 +13,34 @@
   font-size: calc(15px + 2vmin);
   padding-left: 20px;
   padding-top: 20px;
+  gap:10px;
+  
   
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .App-header {
     display:none;
   }
 }
 
+.Dog-logo {
+  width: 50px;
+  fill:none;
+}
+
+.Dog-logo path {
+  stroke:#17293A;
+  stroke-width: 10px;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
 .Menu-button {
+  position:fixed;
   margin-left: 20px;
   margin-top: 20px;
-  display:fixed;
-  position:absolute;
+
 }
 
 .Menu-button:active {
@@ -56,6 +56,7 @@
   border:none;
   background:none;
   color:none;
+  z-index: top;
 }
 
 .Menu-icon {
@@ -73,12 +74,14 @@
 }
 
 .Sidebar {
+
   padding-top:25px;
   position:fixed;
   top:0;
   left:0;
   width:100vw;
   height:50px;
+
 
   display:flex;
   flex-direction:row;
@@ -88,8 +91,39 @@
 
 }
 
+.Sidebar a {
+  color:#5E88B3;
+  text-decoration:none;
+}
 
-@media (min-width: 768px) { /* hide on desktop */
+.Sidebar a.active-link {
+  color:#17293A;
+  text-decoration:none;
+}
+
+.Close-button {
+  display:fixed;
+  margin-top:20px;
+  margin-left:20px;
+}
+
+.Close-button button {
+  border:none;
+  background:none;
+  color:none;
+}
+
+.Close-icon {
+  width: 15px;
+}
+
+.Close-icon line {
+  stroke:#17293A;
+  stroke-width: 10px;
+}
+
+
+@media (min-width: 600px) { /* hide on desktop */
   .Menu-button {
     display:none;
   }
@@ -102,33 +136,191 @@
 .App-link {
   color: inherit;
   text-decoration:none;
-}
-
-.App-link:hover {
-  color: #17293A
+  transition: transform 0.3s, color 0.3s;
 }
 
 .App-link:active {
-  color: #B0D7FF;
+  color: #17293A;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.active-link {
+  transform: scale(1.2);
+  color:#17293A;
+  transition: transform 0.3s, color 0.3s;
 }
 
 .App-body {
-  text-align: center;
+  text-align:center;
   margin-left: 25vw;
   margin-right: 5vw;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .App-body {
     margin-left: 5vw;
   }
+}
+
+.App-intro {
+  min-height: 100vh;
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content:center;
+  gap:20px;
+}
+
+.Me {
+  width:fill;
+  display:flex;
+  flex-wrap: row wrap;
+  justify-content:space-around;
+  align-items:center;
+  gap:20px;
+  
+}
+
+.Circular-image {
+  height: 50vmin;
+  width: 50vmin;
+  border-radius: 50%; /* This makes the image circular */
+  object-fit: cover;  /* Ensures the image scales properly within the circle */
+}
+
+.Image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px; /* Adjust for positioning */
+}
+
+.dog-no-bones {
+  fill: rgb(var(--highlight-rgb));
+  stroke-width: 2%;
+  width: 50%;
+
+}
+
+#dawg {
+  fill: none;
+  stroke: #17293A;
+  stroke-width: 10px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+
+
+.g {
+  stroke-dasharray: 1500;
+  stroke-dashoffset: 1500;
+  animation: draw;
+  animation-duration: 2s, 2s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  animation-delay: 0.5s, 4s;
+  
+  
+}
+
+.arrett {
+  stroke-dasharray: 1500;
+  stroke-dashoffset: 1500;
+  animation-name: draw;
+  animation-duration: 2s, 2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+  animation-delay: 0.7s, 4s;
+}
+
+.paw-1 {
+  stroke-dasharray: 150;
+  stroke-dashoffset: 150;
+  animation: draw;
+  animation-duration: 1s, 2s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  animation-delay: 1.75s, 4s; /* Delay to start after name-draw */
+}
+
+.paw-2 {
+  stroke-dasharray: 150;
+  stroke-dashoffset: 150;
+  animation: draw;
+  animation-duration: 1s, 2s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  animation-delay: 2s, 4s; /* Delay to start after name-draw */
+}
+
+.paw-3 {
+  stroke-dasharray: 150;
+  stroke-dashoffset: 150;
+  animation: draw;
+  animation-duration: 1s, 2s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  animation-delay: 2.25s, 4s ; /* Delay to start after name-draw */
+}
+
+.paw-4 {
+  stroke-dasharray: 150;
+  stroke-dashoffset: 150;
+  animation: draw;
+  animation-duration: 1s, 2s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  animation-delay: 2.5s, 4s; /* Delay to start after name-draw */
+}
+
+.eye-1 {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: draw;
+  animation-duration: 1.5s, 2s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  animation-delay: 3s, 4s; /* Delay to start after name-draw */
+}
+
+.eye-2 {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: draw;
+  animation-duration: 1.5s, 2s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  animation-delay: 3.1s, 4s; /* Delay to start after name-draw */
+}
+
+.wag-1, .wag-3 {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: draw;
+  animation-duration: 1s, 2s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  animation-delay: 3.5s, 4s;
+}
+
+
+
+.wag-2, .wag-4 {
+  stroke-dasharray: 50;
+  stroke-dashoffset: 50;
+  animation: draw;
+  animation-duration: 1s, 2s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  animation-delay: 3.75s, 4s; /* Delay to start after name-draw */
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.App-intro p {
+  text-align:justify;
 }
