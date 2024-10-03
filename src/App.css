@@ -221,7 +221,7 @@
 
 .Image-container {
   
-  z-index:0;
+  z-index:5000;
   display: flex;
   flex-direction:row;
   align-items: center;
