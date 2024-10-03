@@ -175,7 +175,7 @@
   width:fill;
   display:flex;
   flex-direction:row-reverse;
-  align-items:left;
+  align-items:center;
   /* overflow:hidden; */
   animation-name:Me-enter;
   animation-duration: 0.5s;
@@ -197,6 +197,7 @@
 .Rectangle {
   z-index:-1;
   width:100%;
+  height:25vmin;
   display:flex;
   flex-direction:column-reverse;
   align-items:center;
@@ -206,6 +207,7 @@
   background-color:#5E88B3;
 
   align-items:bottom;
+  transform:scaleX(1.1);
   transform-origin: 10% center;
 }
 
@@ -214,21 +216,27 @@
   height: 25vmin;
   width: 25vmin;
   border-radius: 50%; /* This makes the image circular */
-  object-fit: cover;  /* Ensures the image scales properly within the circle */
+  object-fit: cover;   /*Ensures the image scales properly within the circle */
 }
 
 .Image-container {
+  
   z-index:0;
   display: flex;
-  align-items: left;
+  flex-direction:row;
+  align-items: center;
+  height:25vmin;
+  width: 25vmin;
+  align-content:center;
   background-color:#5E88B3;
   border-top-left-radius:50%;
   border-bottom-left-radius:50%;
 }
 
 .Dog-spacing {
-  z-index:100;
-  display:relative;
+  display:flex;
+  flex-direction:column;
+  align-items:top;
 
 }
 
@@ -239,7 +247,6 @@
   height: 25vmin;
   transform: scale(1.5);
   transform-origin:bottom;
-  margin-left:-20px;
 }
 
 #dawg {
