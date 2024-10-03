@@ -73,47 +73,55 @@ function About( {sectionsRef}) {
       ref={(el) => (sectionsRef.current[0] = el)}
       className="App-intro"
     >
+    
+    
       
-      
-      <svg className="dog-no-bones" xmlns="http://www.w3.org/2000/svg" viewBox="-5 -10 420 275">
-          <g id="Layer_2" data-name="Layer 2">
-            <g id="Layer_1-2" data-name="Layer 1">
-              <path id="dawg" className="g" d="M.14,169.28c31.43-1.1,49.65-8.67,66.58-30.54S97.8,67.61,93.92,40.23c-.18-1.27-.47-2.67-1.51-3.42-2-1.42-4.6.58-5.93,2.6a26.8,26.8,0,0,0-4.33,16.88,11.46,11.46,0,0,0,2.33,6.64c2.07,2.38,5.4,3.14,8.52,3.62a99.58,99.58,0,0,0,22.09.94c4.31-.29,8.79-.93,12.35-3.38,4.42-3,6.68-8.27,8.45-13.31,5.76-16.41,8.66-33.65,11.53-50.8,7.06,50.76,8.28,123.77-.86,174.19-1.36,7.49-3,15-6.14,21.92-9.8,22-33.52,36.19-57.59,37.61s-49.28-6-67.48-21.82c-5.2-4.53-8.89-10.87-11.77-18.52a55.77,55.77,0,0,1-3-27.85c1.64-10.94,4.61-22.15,12.65-29.74,6.08-5.74,14-9.11,21.86-12,19.46-7,40.08-11.6,60.75-10.61,29.42,1.41,57.63,11.51,86.37,17.93,20.94,4.68,64.51,8.86,84.79,5.36,28.38-4.92,44-7.69,67.07-30.31C349,91.65,355.9,56,355.9,56c10,9.34,16.7,25.86,16.18,39.84"/>
-              <path id="dawg" className="eye-1" d="M113.5,90.16a60.47,60.47,0,0,0-2.73,9.9"/>
-              <path id="dawg" className="eye-2" d="M130.24,87.07a66.14,66.14,0,0,0-3.85,15.22"/>
-              <path id="dawg" className="paw-1" d="M170.93,199.51l-8.81,25.73a4.47,4.47,0,0,1-1.28,2.22,4.36,4.36,0,0,1-2.83.59c-3.34-.11-6.69-.5-10-.33a17,17,0,0,0-9.44,3c-2.67,2-4.45,5.43-3.86,8.72s4,6,7.27,5.29"/>
-              <path id="dawg" className="paw-2" d="M189,213.06l-5.28,25.21a5.23,5.23,0,0,1-1.32,2.95,5,5,0,0,1-2.48,1c-2.92.55-5.87,1-8.83,1.22-2.79.25-5.7.4-8.16,1.73s-4.33,4.29-3.41,6.93c.81,2.32,3.32,3.53,5.65,4.26a37.91,37.91,0,0,0,21.55.32c3.24-.92,6.9-3,6.82-6.41"/>
-              <path id="dawg" className="paw-3" d="M329.16,188.79c3,10.06,4,14.65,7.07,24.71a4.4,4.4,0,0,1,.21,2.87,4.51,4.51,0,0,1-2.52,2.1c-5.43,2.52-12.51,4.13-14.34,9.34a7.53,7.53,0,0,0,2.16,7.86,10.05,10.05,0,0,0,8.74,2.33"/>
-              <path id="dawg" className="paw-4" d="M349.27,193.11c5.11,11.92,7.62,18.63,12.73,30.56a1.63,1.63,0,0,1,.17,1.3,1.86,1.86,0,0,1-1.11.77c-3.24,1.1-6.89.45-10.39.45s-7.53,1.11-8.6,4a6.41,6.41,0,0,0,0,3.73,8.55,8.55,0,0,0,4.45,6c2.23,1,4.87.72,7.29.28a62.28,62.28,0,0,0,24.41-10"/>
-              <path id="dawg" className="arrett" d="M192.64,150.09c-2.79-3.64-8-2.29-11.12.76-5.87,5.76-7.53,16.55-3.81,24.66a11.59,11.59,0,0,0,4.7,5.6,8.54,8.54,0,0,0,5.4.64c6.52-1.12,12-7.51,12.87-15.11.64,4.51,1.67,9.68,5.16,11.86a10.4,10.4,0,0,0,4.72,1.26c18.33,1.56,41.11-.08,54.8-.74,7.68-.37,21.94,1.27,30.1-4.29,6-4.06,10-9.9,8.92-17.88a34.55,34.55,0,0,0-2.12-7.85c-1.74-5.23-10.18-38-10.18-38s11.18,37.51,14.5,41.91,5.41,8.87,10.26,9.47a6.26,6.26,0,0,0,5.81-2.06c1.84-2.37,1.61-6,1.26-9.19-1-9.44-14.44-52.12-14.44-52.12s19.5,51.08,24.91,54.84c2.33,1.62.32-9.76,3-10s5-4.37,4.89-7.52"/>
-              <path id="dawg" className="wag-1" d="M329.24,45a26.11,26.11,0,0,0-6.67,14.33"/>
-              <path id="dawg" className="wag-2" d="M320.56,29.3a59.4,59.4,0,0,0-11.31,22.24"/>
-              <path id="dawg" className="wag-3" d="M385.21,46.8a33,33,0,0,1,6.16,15.76"/>
-              <path id="dawg" className="wag-4" d="M395.89,35.09a58.41,58.41,0,0,1,9.76,34.37"/>
-            </g>
-          </g>
-        </svg>
 
-        <div className="Me">
+      <div className="Me">
+
+        <div className="Rectangle">
+          <div className="Dog-spacing">
+          <svg className="dog-no-bones" xmlns="http://www.w3.org/2000/svg" viewBox="-5 -10 420 275">
+            <g id="Layer_2" data-name="Layer 2">
+              <g id="Layer_1-2" data-name="Layer 1">
+                <path id="dawg" className="g" d="M.14,169.28c31.43-1.1,49.65-8.67,66.58-30.54S97.8,67.61,93.92,40.23c-.18-1.27-.47-2.67-1.51-3.42-2-1.42-4.6.58-5.93,2.6a26.8,26.8,0,0,0-4.33,16.88,11.46,11.46,0,0,0,2.33,6.64c2.07,2.38,5.4,3.14,8.52,3.62a99.58,99.58,0,0,0,22.09.94c4.31-.29,8.79-.93,12.35-3.38,4.42-3,6.68-8.27,8.45-13.31,5.76-16.41,8.66-33.65,11.53-50.8,7.06,50.76,8.28,123.77-.86,174.19-1.36,7.49-3,15-6.14,21.92-9.8,22-33.52,36.19-57.59,37.61s-49.28-6-67.48-21.82c-5.2-4.53-8.89-10.87-11.77-18.52a55.77,55.77,0,0,1-3-27.85c1.64-10.94,4.61-22.15,12.65-29.74,6.08-5.74,14-9.11,21.86-12,19.46-7,40.08-11.6,60.75-10.61,29.42,1.41,57.63,11.51,86.37,17.93,20.94,4.68,64.51,8.86,84.79,5.36,28.38-4.92,44-7.69,67.07-30.31C349,91.65,355.9,56,355.9,56c10,9.34,16.7,25.86,16.18,39.84"/>
+                <path id="dawg" className="eye-1" d="M113.5,90.16a60.47,60.47,0,0,0-2.73,9.9"/>
+                <path id="dawg" className="eye-2" d="M130.24,87.07a66.14,66.14,0,0,0-3.85,15.22"/>
+                <path id="dawg" className="paw-1" d="M170.93,199.51l-8.81,25.73a4.47,4.47,0,0,1-1.28,2.22,4.36,4.36,0,0,1-2.83.59c-3.34-.11-6.69-.5-10-.33a17,17,0,0,0-9.44,3c-2.67,2-4.45,5.43-3.86,8.72s4,6,7.27,5.29"/>
+                <path id="dawg" className="paw-2" d="M189,213.06l-5.28,25.21a5.23,5.23,0,0,1-1.32,2.95,5,5,0,0,1-2.48,1c-2.92.55-5.87,1-8.83,1.22-2.79.25-5.7.4-8.16,1.73s-4.33,4.29-3.41,6.93c.81,2.32,3.32,3.53,5.65,4.26a37.91,37.91,0,0,0,21.55.32c3.24-.92,6.9-3,6.82-6.41"/>
+                <path id="dawg" className="paw-3" d="M329.16,188.79c3,10.06,4,14.65,7.07,24.71a4.4,4.4,0,0,1,.21,2.87,4.51,4.51,0,0,1-2.52,2.1c-5.43,2.52-12.51,4.13-14.34,9.34a7.53,7.53,0,0,0,2.16,7.86,10.05,10.05,0,0,0,8.74,2.33"/>
+                <path id="dawg" className="paw-4" d="M349.27,193.11c5.11,11.92,7.62,18.63,12.73,30.56a1.63,1.63,0,0,1,.17,1.3,1.86,1.86,0,0,1-1.11.77c-3.24,1.1-6.89.45-10.39.45s-7.53,1.11-8.6,4a6.41,6.41,0,0,0,0,3.73,8.55,8.55,0,0,0,4.45,6c2.23,1,4.87.72,7.29.28a62.28,62.28,0,0,0,24.41-10"/>
+                <path id="dawg" className="arrett" d="M192.64,150.09c-2.79-3.64-8-2.29-11.12.76-5.87,5.76-7.53,16.55-3.81,24.66a11.59,11.59,0,0,0,4.7,5.6,8.54,8.54,0,0,0,5.4.64c6.52-1.12,12-7.51,12.87-15.11.64,4.51,1.67,9.68,5.16,11.86a10.4,10.4,0,0,0,4.72,1.26c18.33,1.56,41.11-.08,54.8-.74,7.68-.37,21.94,1.27,30.1-4.29,6-4.06,10-9.9,8.92-17.88a34.55,34.55,0,0,0-2.12-7.85c-1.74-5.23-10.18-38-10.18-38s11.18,37.51,14.5,41.91,5.41,8.87,10.26,9.47a6.26,6.26,0,0,0,5.81-2.06c1.84-2.37,1.61-6,1.26-9.19-1-9.44-14.44-52.12-14.44-52.12s19.5,51.08,24.91,54.84c2.33,1.62.32-9.76,3-10s5-4.37,4.89-7.52"/>
+                <path id="dawg" className="wag-1" d="M329.24,45a26.11,26.11,0,0,0-6.67,14.33"/>
+                <path id="dawg" className="wag-2" d="M320.56,29.3a59.4,59.4,0,0,0-11.31,22.24"/>
+                <path id="dawg" className="wag-3" d="M385.21,46.8a33,33,0,0,1,6.16,15.76"/>
+                <path id="dawg" className="wag-4" d="M395.89,35.09a58.41,58.41,0,0,1,9.76,34.37"/>
+              </g>
+            </g>
+          </svg>
+          </div>
+        </div>
+      
         <div className="Image-container">
           <img src={profileImage} alt = "Profile" className="Circular-image" />
         </div>
-        <p>
-          <h1>Hi, I'm Garrett</h1>
-          <p> 
-            I'm a born and raised Texan that recently moved to New York. 
-            At my core, I love to create. Throughout my life I have always had hobbies where
-            I am creating something new out of nothing. Knitting, crochet, woodworking, cooking - 
-            all of these were outlets for me to put pieces of my mind into the zeitgeist, 
-            and programming is no different. 
-              
-            Front-end development gives me the opportunity to mix two beautiful things, design and logic.
-            I may just be getting my career started, but I strive to create user interfaces that capture 
-            the very essence of the program while being intuitive, clean, and pleasing to the eye. Please 
-            scroll and take a look at some of the projects I have helped bring to life. 
-          </p>
-        </p>  
+        
       </div>
+      <p> 
+          <h1>Hi, I'm Garrett</h1>
+        
+          I'm a born and raised Texan that recently moved to New York. 
+          At my core, I love to create. Throughout my life I have always had hobbies where
+          I am creating something new out of nothing. Knitting, crochet, woodworking, cooking - 
+          all of these were outlets for me to put pieces of my mind into the zeitgeist, 
+          and programming is no different. 
+            
+          Front-end development gives me the opportunity to mix two beautiful things, design and logic.
+          I may just be getting my career started, but I strive to create user interfaces that capture 
+          the very essence of the program while being intuitive, clean, and pleasing to the eye. Please 
+          scroll and take a look at some of the projects I have helped bring to life. 
+        
+        </p> 
     </div>
   )
 }

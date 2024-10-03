@@ -1,10 +1,13 @@
 body {
   margin: 0;
+  position:relative;
   font-family: -apple-system, 'Helvetica Neue',sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #E8F4FF;
-  color: #5E88B3
+  color: #5E88B3;
+  overflow-x:hidden;
+  width:100%;
 }
 
 
