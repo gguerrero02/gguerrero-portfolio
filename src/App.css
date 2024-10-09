@@ -200,7 +200,7 @@
   height:25vmin;
   display:flex;
   flex-direction:column-reverse;
-  align-items:center;
+  align-items:left;
   margin-right:-5vw;
   margin-left:-12.5vmin;
 
@@ -235,7 +235,7 @@
 .Dog-spacing {
   display:flex;
   flex-direction:column;
-  align-items:top;
+  align-items:left;
 
 }
 
@@ -244,8 +244,9 @@
   fill: rgb(var(--highlight-rgb));
   stroke-width: 2%;
   height: 20vmin;
-  transform: scale(1.5);
+  transform: scale(1.75);
   transform-origin:bottom;
+  padding-bottom: 1vmin;
 }
 
 #dawg {
