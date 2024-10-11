@@ -1,9 +1,9 @@
 .App-header {
   /* text-align: left; */
-  position: sticky;
+  position:fixed;
   float:left;
   background-color: none;
-  min-height: 100vh;
+  height: fit-content;
   min-width: fit-content;
 
   display: flex;
