@@ -83,6 +83,7 @@
 
 .Sidebar {
 
+  margin-top:-10vh;
   padding-top:7px;
   padding-bottom:7px;
   position:sticky;
