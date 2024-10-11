@@ -1,6 +1,6 @@
 .App-header {
   /* text-align: left; */
-  position: fixed;
+  position: sticky;
   float:left;
   background-color: none;
   min-height: 100vh;
@@ -29,6 +29,13 @@
   fill:none;
 }
 
+@media (max-width: 600px) {
+  .Dog-logo {
+    width:40px;
+    
+  }
+}
+
 .Dog-logo path {
   stroke:#17293A;
   stroke-width: 10px;
@@ -37,9 +44,10 @@
 }
 
 .Menu-button {
-  position:fixed;
-  margin-left: 20px;
-  margin-top: 20px;
+  position:sticky;
+  top:20px;
+  left:20px;
+  background-color:none;
 
 }
 
@@ -75,19 +83,23 @@
 
 .Sidebar {
 
-  padding-top:25px;
-  position:fixed;
+  padding-top:7px;
+  padding-bottom:7px;
+  position:sticky;
   top:0;
   left:0;
   width:100vw;
-  height:50px;
+  height:fit-content;
+  z-index:10000;
 
 
   display:flex;
   flex-direction:row;
-  justify-content:space-evenly;
+  align-items:center;
+  justify-content:space-around;
 
-  background: linear-gradient(to bottom, #E8F4FF 50%, transparent 100%);
+
+  background-image:linear-gradient(to bottom right,#B0D7FF, #5E88B3);
 
 }
 
@@ -150,6 +162,15 @@
   transition: transform 0.3s, color 0.3s;
 }
 
+
+@media (max-width: 600px) {
+  .Sidebar a {
+    color:#E8F4FF;
+  }
+  .active-link{
+    transform-origin:center;  
+  }
+}
 .App-body {
   text-align:center;
   margin-left: 25vw;
@@ -244,9 +265,9 @@
   fill: rgb(var(--highlight-rgb));
   stroke-width: 2%;
   height: 20vmin;
-  transform: scale(1.75);
+  transform: scale(1.4);
   transform-origin:bottom;
-  padding-bottom: 1vmin;
+  padding-bottom: 2vmin;
 }
 
 #dawg {
