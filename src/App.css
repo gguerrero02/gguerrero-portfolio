@@ -194,6 +194,7 @@
 }
 
 .Me {
+
   width:fill;
   display:flex;
   flex-direction:row-reverse;
@@ -202,6 +203,12 @@
   animation-name:Me-enter;
   animation-duration: 0.5s;
   animation-iteration-count: 1;
+}
+
+@media (max-width: 600px) {
+  .Me {
+    margin-top:15vmin;
+  }
 }
 
 @keyframes Me-enter {
