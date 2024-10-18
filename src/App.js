@@ -72,6 +72,85 @@ function Navbar({ activeSelection }) {
   )
 }
 
+function importAllImages(r) {
+  return r.keys().map(r);
+}
+
+const nightswipe_img = importAllImages(require.context('./assets/project_images/nightswipe', false, /\.(png|jpe?g|svg)$/));
+const il_img = importAllImages(require.context('./assets/project_images/infinite_library', false, /\.(png|jpe?g|svg)$/));
+
+
+function Pictures() {
+
+  // State to keep track of the currently displayed image index
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Function to handle going to the previous image
+  const goToPrevious = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? nightswipe_img.length - 1 : prevIndex - 1
+    );
+  };
+
+  // Function to handle going to the next image
+  const goToNext = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === nightswipe_img.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  return (
+    <div className = "Pictures">
+        
+      <div className = "Pictures-image">
+        <img src={nightswipe_img[currentIndex]} alt="gallery"/>
+      </div>
+        
+
+      <div className="Pictures-dots">
+        <div className = "Pictures-button">
+          <button onClick={goToPrevious}>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 90">
+                <g id="Layer_2" data-name="Layer 2">
+                    <g id="Layer_1-2" data-name="Layer 1">
+                        <path d="M41.5,1A40.5,40.5,0,1,1,1,41.5,40.55,40.55,0,0,1,41.5,1m0-1A41.5,41.5,0,1,0,83,41.5,41.5,41.5,0,0,0,41.5,0Z"/>
+                        <polyline class="cls-1" points="52.12 55.79 23.62 41.5 52.12 27.21"/>
+                    </g>
+                </g>
+            </svg>
+          </button>
+        </div>
+        {nightswipe_img.map((_, index) => (
+          <span
+            key={index}
+            style={{
+              height: '15px',
+              width: '15px',
+              margin: '0 5px',
+              backgroundColor: currentIndex === index ? '#17293A' : '#B0D7FF',
+              borderRadius: '50%',
+              display: 'inline-block'
+            }}
+          />
+        ))}
+        <div className = "Pictures-button">
+          <button onClick={goToNext}>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-5 -5 90 90">
+              <g id="Layer_2_1_">
+                <g id="Layer_1-2">
+                  <path d="M41.5,1C19.1,1,1,19.1,1,41.5S19.1,82,41.5,82S82,63.9,82,41.5C82,19.1,63.9,1,41.5,1 M41.5,0C64.4,0,83,18.6,83,41.5
+                    S64.4,83,41.5,83S0,64.4,0,41.5S18.6,0,41.5,0z"/>
+                  <polyline class="st0" points="30.9,55.8 59.4,41.5 30.9,27.2"/>
+                </g>
+              </g>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 function About( {sectionsRef}) {
   return (
     <div
@@ -132,9 +211,28 @@ function Projects( {sectionsRef} ) {
     <div
       id="projects"
       ref={(el) => (sectionsRef.current[1] = el)}
-      className="App-intro"
+      className="App-project"
     >
-      <h1>Projects</h1>
+      <div class = "Project-grid">
+        <div class = "Project-name">
+          <h1>NightSwipe</h1>
+        </div>
+        <div class = "Project-pictures">
+          <Pictures/>
+        </div>
+        <div class = "Project-description">
+          <p>This is the description. This is Nightswipe, an app dedicated to ending long, boring conversations about what to do with your evening.</p>
+        </div>
+        <div class = "Project-tabs">
+          <ul>
+            <a>Design</a>
+            <a>Implementation</a>
+            <a>Result</a>
+          </ul>
+        </div>
+      </div>
+      
+      
     </div>
   )
 }

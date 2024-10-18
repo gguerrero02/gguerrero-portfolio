@@ -173,7 +173,7 @@
   }
 }
 .App-body {
-  text-align:center;
+  /* text-align:center; */
   margin-left: 25vw;
   margin-right: 5vw;
 }
@@ -207,7 +207,7 @@
 
 @media (max-width: 600px) {
   .Me {
-    margin-top:15vmin;
+    margin-top:10vmin;
   }
 }
 
@@ -401,3 +401,137 @@
 .App-intro p {
   text-align:justify;
 }
+
+/* .App-project {
+  min-height:100vh;
+  width:fill;
+} */
+
+.Project-grid {
+  display: grid;
+
+  width: 100%;
+  height: 100vh;
+  max-height:100vh;
+  grid-template-columns: 30vw auto; /* 2 equal columns */
+  grid-template-rows: auto 1fr;    /* Defines a 2-row grid */
+}
+
+.Project-name {
+  padding-right: 20px;
+  grid-column:1;
+  grid-row:1;
+
+}
+
+.Project-pictures {
+  max-width: 100%;
+  grid-column:2;
+  grid-row:2;
+}
+
+.Pictures {
+  min-height: 100%;
+  min-width: 100%;
+  display:flex;
+  flex-direction: column-reverse;
+  justify-content:flex-end;
+}
+
+.Pictures-button button {
+  background:none;
+  border:none;
+  outline:none;
+  height:20px;
+  width:20px;
+}
+
+.Pictures-button svg {
+  width:20px;
+  height:20px;
+  fill:none;
+  stroke:#17293A;
+  stroke-width: 2px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* .Pictures-button path {
+  stroke:#17293A;
+  stroke-width: 5px;
+} */
+
+
+.Pictures-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: fill; /* Controls maximum width of the image container */
+  height:auto; /* Set a fixed height for the image container */
+}
+
+.Pictures-image img {
+  max-width:100%;
+  min-height: 1fr;
+  height:auto;
+  
+  object-fit:contain; /* Ensure image covers the container, may crop some of the image */
+}
+
+.Pictures-dots {
+  display:flex;
+  flex-direction: row;
+  justify-content:center;
+  padding-top: 10px;
+}
+
+.Project-description {
+  grid-column:1;
+  grid-row:2;
+}
+
+.Project-description p {
+  margin:0;
+  padding:0;
+  text-align:justify;
+  padding-right: 20px;
+}
+
+.Project-tabs {
+  grid-column:2;
+  grid-row:1;
+  align-self:end;
+}
+
+.Project-tabs ul {
+  margin:0;
+  margin-left: 0px;
+  padding: 0px;
+}
+
+.Project-tabs a {
+  padding-right: 10px;
+  font-weight:bold;
+  font-size: larger;
+}
+
+@media (max-width: 600px) {
+  .Project-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    justify-items:center;
+
+  }
+
+  .Project-tabs {
+    grid-column:1;
+    grid-row: 3;
+  }
+
+  .Project-pictures {
+    grid-column:1;
+    grid-row: 4;
+  }
+}
+
+
