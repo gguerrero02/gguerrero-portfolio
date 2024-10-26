@@ -77,7 +77,7 @@ function importAllImages(r) {
 }
 
 const nightswipe_img = importAllImages(require.context('./assets/project_images/nightswipe', false, /\.(png|jpe?g|svg)$/));
-const il_img = importAllImages(require.context('./assets/project_images/infinite_library', false, /\.(png|jpe?g|svg)$/));
+// const il_img = importAllImages(require.context('./assets/project_images/infinite_library', false, /\.(png|jpe?g|svg)$/));
 
 
 function Pictures() {
