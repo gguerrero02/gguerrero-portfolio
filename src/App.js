@@ -267,7 +267,7 @@ function App() {
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting) {  
           setActiveSelection(entry.target.id); // Correct setter here
         }
       });
