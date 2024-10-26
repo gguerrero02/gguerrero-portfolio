@@ -259,7 +259,7 @@ function App() {
   const sectionsRef = useRef([]);
 
   useEffect(() => {
-    const options = {
+    const options = { 
       root: null,
       rootMargin: '0px',
       threshold: 0.6, // Adjust as needed
