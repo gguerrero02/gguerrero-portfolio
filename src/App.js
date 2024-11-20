@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useSwipeable } from "react-swipeable";
 import './App.css';
 import profileImage from './assets/portrait.JPG';
+
 
 function DogLogo() {
   return (
@@ -99,10 +101,19 @@ function Pictures() {
     );
   };
 
+  const swipeHandler = useSwipeable({
+    onSwipedLeft: goToNext,
+    onSwipedRight: goToPrevious,
+    preventDefaultTouchmoveEvent: true,
+    trackMouse:false,
+  });
+
   return (
     <div className = "Pictures">
         
-      <div className = "Pictures-image">
+
+      <div className = "Pictures-image" {...swipeHandler}>
+        
         <img src={nightswipe_img[currentIndex]} alt="gallery"/>
       </div>
         
@@ -110,7 +121,7 @@ function Pictures() {
       <div className="Pictures-dots">
         <div className = "Pictures-button">
           <button onClick={goToPrevious}>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 90">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-5 -5 90 90">
                 <g id="Layer_2" data-name="Layer 2">
                     <g id="Layer_1-2" data-name="Layer 1">
                         <path d="M41.5,1A40.5,40.5,0,1,1,1,41.5,40.55,40.55,0,0,1,41.5,1m0-1A41.5,41.5,0,1,0,83,41.5,41.5,41.5,0,0,0,41.5,0Z"/>
@@ -242,9 +253,14 @@ function Contact ( {sectionsRef} ) {
     <div
       id="contact"
       ref={(el) => (sectionsRef.current[2] = el)}
-      className="App-intro"
+      className="App-contact"
     >
-      <h1>Contact</h1>
+      <h1>Contact Me</h1>
+      <p><h2>Phone: </h2> (325) 262-6866</p>
+      <p><h2>Email: </h2> garrettecgue@gmail.com</p>
+      <p><a href="https://www.linkedin.com/in/garrettecgue"><h2>Connect with me on LinkedIn!</h2></a></p>
+      <p><a href="https://www.github.com/garrettguerrero"><h2>Check out my GitHub!</h2></a></p>
+
     </div>
   )
 }
