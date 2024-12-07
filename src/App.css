@@ -3,37 +3,37 @@
 }
 
 .App-header {
-  /* text-align: left; */
+  /* text-align:left; */
   position:fixed;
   float:left;
-  background-color: none;
-  height: fit-content;
-  min-width: fit-content;
+  background-color:none;
+  height:fit-content;
+  min-width:fit-content;
 
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-  justify-content: left;
-  font-size: calc(15px + 2vmin);
-  padding-left: 20px;
-  padding-top: 20px;
+  display:flex;
+  flex-direction:column;
+  align-items:left;
+  justify-content:left;
+  font-size:calc(15px + 2vmin);
+  padding-left:20px;
+  padding-top:20px;
   gap:10px;
   
   
 }
 
-@media (max-width: 600px) {
+@media (max-width:600px) {
   .App-header {
     display:none;
   }
 }
 
 .Dog-logo {
-  width: 50px;
+  width:50px;
   fill:none;
 }
 
-@media (max-width: 600px) {
+@media (max-width:600px) {
   .Dog-logo {
     width:40px;
     
@@ -42,7 +42,7 @@
 
 .Dog-logo path {
   stroke:#17293A;
-  stroke-width: 10px;
+  stroke-width:10px;
   stroke-linecap:round;
   stroke-linejoin:round;
 }
@@ -60,28 +60,28 @@
 }
 
 .Menu-button:active line {
-  stroke: #B0D7FF;
+  stroke:#B0D7FF;
 }
 
 .Menu-button button {
-  padding: 5px;
+  padding:5px;
   border:none;
   background:none;
   color:none;
-  z-index: top;
+  z-index:top;
 }
 
 .Menu-icon {
 
-  height: 15px;
-  pointer-events: none;
+  height:15px;
+  pointer-events:none;
   
 }
 
 .Menu-icon line {
-  stroke-width: 10px;
-  stroke: #17293A;
-  stroke-linecap: round;
+  stroke-width:10px;
+  stroke:#17293A;
+  stroke-linecap:round;
   
 }
 
@@ -131,16 +131,16 @@
 }
 
 .Close-icon {
-  width: 15px;
+  width:15px;
 }
 
 .Close-icon line {
   stroke:#17293A;
-  stroke-width: 10px;
+  stroke-width:10px;
 }
 
 
-@media (min-width: 600px) { /* hide on desktop */
+@media (min-width:600px) { /* hide on desktop */
   .Menu-button {
     display:none;
   }
@@ -151,24 +151,24 @@
 } 
 
 .App-link {
-  color: inherit;
+  color:inherit;
   text-decoration:none;
 }
 
 .App-link:active {
-  color: #17293A;
+  color:#17293A;
 }
 
 .active-link {
   transform-origin:0 100%;
-  transform: scale(1.2);
+  transform:scale(1.2);
   
   color:#17293A;
-  transition: transform 0.3s, color 0.3s;
+  transition:transform 0.3s, color 0.3s;
 }
 
 
-@media (max-width: 600px) {
+@media (max-width:600px) {
   .Sidebar a {
     color:#E8F4FF;
   }
@@ -178,20 +178,20 @@
 }
 .App-body {
   /* text-align:center; */
-  margin-left: 25vw;
-  margin-right: 5vw;
+  margin-left:25vw;
+  margin-right:5vw;
 }
 
-@media (max-width: 600px) {
+@media (max-width:600px) {
   .App-body {
-    margin-left: 5vw;
+    margin-left:5vw;
   }
 }
 
 .App-intro {
-  min-height: 100vh;
+  min-height:100vh;
   display:flex;
-  flex-direction: column;
+  flex-direction:column;
   align-items:center;
   justify-content:center;
   gap:20px;
@@ -205,11 +205,11 @@
   align-items:center;
   /* overflow:hidden; */
   animation-name:Me-enter;
-  animation-duration: 0.5s;
-  animation-iteration-count: 1;
+  animation-duration:0.5s;
+  animation-iteration-count:1;
 }
 
-@media (max-width: 600px) {
+@media (max-width:600px) {
   .Me {
     margin-top:10vmin;
   }
@@ -217,13 +217,13 @@
 
 @keyframes Me-enter {
   0% {
-    transform: translateX(50%);
-    opacity: 0%;
+    transform:translateX(50%);
+    opacity:0%;
   }
 
   100% {
-    transform: translateX(0%);
-    opacity: 100%;
+    transform:translateX(0%);
+    opacity:100%;
   }
 }
 
@@ -243,20 +243,20 @@
 }
 
 .Circular-image {
-  height: 25vmin;
-  width: 25vmin;
-  border-radius: 50%; /* This makes the image circular */
-  object-fit: cover;   /*Ensures the image scales properly within the circle */
+  height:25vmin;
+  width:25vmin;
+  border-radius:50%; /* This makes the image circular */
+  object-fit:cover;   /*Ensures the image scales properly within the circle */
 }
 
 .Image-container {
   
   z-index:5000;
-  display: flex;
+  display:flex;
   flex-direction:row;
-  align-items: center;
+  align-items:center;
   height:25vmin;
-  width: 25vmin;
+  width:25vmin;
   align-content:center;
   background-color:none;
   border-top-left-radius:50%;
@@ -272,129 +272,129 @@
 
 .dog-no-bones {
   z-index:5;
-  fill: rgb(var(--highlight-rgb));
-  stroke-width: 2%;
-  height: 20vmin;
-  transform: scale(1.4);
+  fill:rgb(var(--highlight-rgb));
+  stroke-width:2%;
+  height:20vmin;
+  transform:scale(1.4);
   transform-origin:bottom;
-  padding-bottom: 2vmin;
+  padding-bottom:2vmin;
 }
 
 #dawg {
-  fill: none;
-  stroke: #17293A;
-  stroke-width: 10px;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+  fill:none;
+  stroke:#17293A;
+  stroke-width:10px;
+  stroke-linecap:round;
+  stroke-linejoin:round;
 }
 
 .g {
-  stroke-dasharray: 1500;
-  stroke-dashoffset: 1500;
-  animation: draw;
-  animation-duration: 2s, 2s;
-  animation-timing-function: ease;
-  animation-fill-mode: forwards;
-  animation-delay: 0.5s, 4s;
+  stroke-dasharray:1500;
+  stroke-dashoffset:1500;
+  animation:draw;
+  animation-duration:2s, 2s;
+  animation-timing-function:ease;
+  animation-fill-mode:forwards;
+  animation-delay:0.5s, 4s;
   
   
 }
 
 .arrett {
-  stroke-dasharray: 1500;
-  stroke-dashoffset: 1500;
-  animation-name: draw;
-  animation-duration: 2s, 2s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease;
-  animation-delay: 0.7s, 4s;
+  stroke-dasharray:1500;
+  stroke-dashoffset:1500;
+  animation-name:draw;
+  animation-duration:2s, 2s;
+  animation-fill-mode:forwards;
+  animation-timing-function:ease;
+  animation-delay:0.7s, 4s;
 }
 
 .paw-1 {
-  stroke-dasharray: 150;
-  stroke-dashoffset: 150;
-  animation: draw;
-  animation-duration: 1s, 2s;
-  animation-timing-function: ease;
-  animation-fill-mode: forwards;
-  animation-delay: 1.75s, 4s; /* Delay to start after name-draw */
+  stroke-dasharray:150;
+  stroke-dashoffset:150;
+  animation:draw;
+  animation-duration:1s, 2s;
+  animation-timing-function:ease;
+  animation-fill-mode:forwards;
+  animation-delay:1.75s, 4s; /* Delay to start after name-draw */
 }
 
 .paw-2 {
-  stroke-dasharray: 150;
-  stroke-dashoffset: 150;
-  animation: draw;
-  animation-duration: 1s, 2s;
-  animation-timing-function: ease;
-  animation-fill-mode: forwards;
-  animation-delay: 2s, 4s; /* Delay to start after name-draw */
+  stroke-dasharray:150;
+  stroke-dashoffset:150;
+  animation:draw;
+  animation-duration:1s, 2s;
+  animation-timing-function:ease;
+  animation-fill-mode:forwards;
+  animation-delay:2s, 4s; /* Delay to start after name-draw */
 }
 
 .paw-3 {
-  stroke-dasharray: 150;
-  stroke-dashoffset: 150;
-  animation: draw;
-  animation-duration: 1s, 2s;
-  animation-timing-function: ease;
-  animation-fill-mode: forwards;
-  animation-delay: 2.25s, 4s ; /* Delay to start after name-draw */
+  stroke-dasharray:150;
+  stroke-dashoffset:150;
+  animation:draw;
+  animation-duration:1s, 2s;
+  animation-timing-function:ease;
+  animation-fill-mode:forwards;
+  animation-delay:2.25s, 4s ; /* Delay to start after name-draw */
 }
 
 .paw-4 {
-  stroke-dasharray: 150;
-  stroke-dashoffset: 150;
-  animation: draw;
-  animation-duration: 1s, 2s;
-  animation-timing-function: ease;
-  animation-fill-mode: forwards;
-  animation-delay: 2.5s, 4s; /* Delay to start after name-draw */
+  stroke-dasharray:150;
+  stroke-dashoffset:150;
+  animation:draw;
+  animation-duration:1s, 2s;
+  animation-timing-function:ease;
+  animation-fill-mode:forwards;
+  animation-delay:2.5s, 4s; /* Delay to start after name-draw */
 }
 
 .eye-1 {
-  stroke-dasharray: 100;
-  stroke-dashoffset: 100;
-  animation: draw;
-  animation-duration: 1.5s, 2s;
-  animation-timing-function: ease;
-  animation-fill-mode: forwards;
-  animation-delay: 3s, 4s; /* Delay to start after name-draw */
+  stroke-dasharray:100;
+  stroke-dashoffset:100;
+  animation:draw;
+  animation-duration:1.5s, 2s;
+  animation-timing-function:ease;
+  animation-fill-mode:forwards;
+  animation-delay:3s, 4s; /* Delay to start after name-draw */
 }
 
 .eye-2 {
-  stroke-dasharray: 100;
-  stroke-dashoffset: 100;
-  animation: draw;
-  animation-duration: 1.5s, 2s;
-  animation-timing-function: ease;
-  animation-fill-mode: forwards;
-  animation-delay: 3.1s, 4s; /* Delay to start after name-draw */
+  stroke-dasharray:100;
+  stroke-dashoffset:100;
+  animation:draw;
+  animation-duration:1.5s, 2s;
+  animation-timing-function:ease;
+  animation-fill-mode:forwards;
+  animation-delay:3.1s, 4s; /* Delay to start after name-draw */
 }
 
 .wag-1, .wag-3 {
-  stroke-dasharray: 100;
-  stroke-dashoffset: 100;
-  animation: draw;
-  animation-duration: 1s, 2s;
-  animation-timing-function: ease;
-  animation-fill-mode: forwards;
-  animation-delay: 3.5s, 4s;
+  stroke-dasharray:100;
+  stroke-dashoffset:100;
+  animation:draw;
+  animation-duration:1s, 2s;
+  animation-timing-function:ease;
+  animation-fill-mode:forwards;
+  animation-delay:3.5s, 4s;
 }
 
 
 
 .wag-2, .wag-4 {
-  stroke-dasharray: 50;
-  stroke-dashoffset: 50;
-  animation: draw;
-  animation-duration: 1s, 2s;
-  animation-timing-function: ease;
-  animation-fill-mode: forwards;
-  animation-delay: 3.75s, 4s; /* Delay to start after name-draw */
+  stroke-dasharray:50;
+  stroke-dashoffset:50;
+  animation:draw;
+  animation-duration:1s, 2s;
+  animation-timing-function:ease;
+  animation-fill-mode:forwards;
+  animation-delay:3.75s, 4s; /* Delay to start after name-draw */
 }
 
 @keyframes draw {
   to {
-    stroke-dashoffset: 0;
+    stroke-dashoffset:0;
   }
 }
 
@@ -408,31 +408,31 @@
 }
 
 .Project-grid {
-  display: grid;
+  display:grid;
   gap:10px;
-  width: 100%;
-  grid-template-columns: 30vw auto; /* 2 equal columns */
-  grid-template-rows: auto 1fr;    /* Defines a 2-row grid */
+  width:100%;
+  grid-template-columns:30vw auto; /* 2 equal columns */
+  grid-template-rows:auto 1fr;    /* Defines a 2-row grid */
 }
 
 .Project-name {
-  padding-right: 20px;
+  padding-right:20px;
   grid-column:1;
   grid-row:1;
 
 }
 
 .Project-pictures {
-  max-width: 100%;
+  max-width:100%;
   grid-column:2;
   grid-row:2;
 }
 
 .Pictures {
 
-  min-width: 100%;
+  min-width:100%;
   display:flex;
-  flex-direction: column;
+  flex-direction:column;
   align-items:center;
   justify-content:flex-start;
 }
@@ -443,8 +443,8 @@
   background:none;
   border:none;
   outline:none;
-  padding: 0;
-  display: flex;
+  padding:0;
+  display:flex;
 
 }
 
@@ -453,31 +453,31 @@
   height:30px;
   fill:none;
   stroke:#17293A;
-  stroke-width: 2px;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+  stroke-width:2px;
+  stroke-linecap:round;
+  stroke-linejoin:round;
 }
 
 /* .Pictures-button path {
   stroke:#17293A;
-  stroke-width: 5px;
+  stroke-width:5px;
 } */
 
 
 .Pictures-image {
   background-image:linear-gradient(to bottom right,#B0D7FF, #5E88B3);
   display:flex;
-  height: 50vh; /* Occupies half the height of the parent */
-  width: 100%; /* Dynamic width */
-  /* flex-shrink: 0; Prevents it from shrinking */
+  height:50vh; /* Occupies half the height of the parent */
+  width:100%; /* Dynamic width */
+  /* flex-shrink:0; Prevents it from shrinking */
   justify-content:center;
-  transition: "transform 0.3s ease-in-out";
+  transition:"transform 0.3s ease-in-out";
   transform:'translateX(-100)';
-  border-radius: 10px;
+  border-radius:10px;
 }
 .Pictures-image img {
   /* max-width:100%;
-  min-height: 0.5fr;
+  min-height:0.5fr;
   height:auto; */
   height:50vh;
   max-width:100%;
@@ -487,10 +487,10 @@
 
 .Pictures-dots {
   display:flex;
-  flex-direction: row;
+  flex-direction:row;
   justify-content:center;
   align-items:center;
-  padding-top: 10px;
+  padding-top:10px;
 }
 
 .Project-description {
@@ -502,7 +502,7 @@
   margin:0;
   padding:0;
   text-align:justify;
-  padding-right: 20px;
+  padding-right:20px;
 }
 
 .Project-tabs {
@@ -513,14 +513,14 @@
 
 .Project-tabs ul {
   margin:0;
-  margin-left: 0px;
-  padding: 0px;
+  margin-left:0px;
+  padding:0px;
 }
 
 .Project-tabs a {
-  padding-right: 10px;
+  padding-right:10px;
   font-weight:bold;
-  font-size: larger;
+  font-size:larger;
 }
 
 .Project-tabs a:hover {
@@ -532,10 +532,10 @@
   color:#17293A;
 }
 
-@media (max-width: 600px) {
+@media (max-width:600px) {
   .Project-grid {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto auto;
+    grid-template-columns:1fr;
+    grid-template-rows:auto auto auto auto;
     justify-items:left;
     gap:10px;
 
@@ -544,12 +544,12 @@
 
   .Project-tabs {
     grid-column:1;
-    grid-row: 3;
+    grid-row:3;
   }
 
-  .Project-tabs a: {
+  /* .Project-tabs a:{
     text-decoration:none;
-  }
+  } */
 
   .Project-tabs a:hover {
     color:#17293A;
@@ -557,15 +557,15 @@
 
   .Project-pictures {
     grid-column:1;
-    grid-row: 4;
+    grid-row:4;
     width:100%;
   }
 }
 
 .App-contact {
 
-  text-align: left;
-  min-height: 100vh;
+  text-align:left;
+  min-height:100vh;
 }
 
 /* .App-contact h2, p {

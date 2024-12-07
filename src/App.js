@@ -39,10 +39,10 @@ function MenuButton({ toggleSidebar }) {
 function Sidebar({ activeSection, toggleSidebar }) {
   return (
     <div className="Sidebar">
-      <a className={`nav-link ${activeSection === 'dog' ? 'active-link' : ''}`} href="#about"><DogLogo/></a>
-      <a className={`nav-link ${activeSection === 'about' ? 'active-link' : ''}`} href="#about">About</a>
-      <a className={`nav-link ${activeSection === 'projects' ? 'active-link' : ''}`} href="#projects">Projects</a>
-      <a className={`nav-link ${activeSection === 'contact' ? 'active-link' : ''}`} href="#contact">Contact</a>
+      <a className={`nav-link ${activeSection === 'dog' ? 'active-link':''}`} href="#about"><DogLogo/></a>
+      <a className={`nav-link ${activeSection === 'about' ? 'active-link':''}`} href="#about">About</a>
+      <a className={`nav-link ${activeSection === 'projects' ? 'active-link':''}`} href="#projects">Projects</a>
+      <a className={`nav-link ${activeSection === 'contact' ? 'active-link':''}`} href="#contact">Contact</a>
     </div>
   );
 }
@@ -53,19 +53,19 @@ function Navbar({ activeSelection }) {
       <DogLogo/>
     
       <a
-        className={`App-link ${activeSelection === 'about' ? 'active-link' : ''}`} // Use activeSelection here
+        className={`App-link ${activeSelection === 'about' ? 'active-link':''}`} // Use activeSelection here
         href="#about"
       >
         About
       </a>
       <a
-        className={`App-link ${activeSelection === 'projects' ? 'active-link' : ''}`} // Use activeSelection here
+        className={`App-link ${activeSelection === 'projects' ? 'active-link':''}`} // Use activeSelection here
         href="#projects"
       >
         Projects
       </a>
       <a
-        className={`App-link ${activeSelection === 'contact' ? 'active-link' : ''}`} // Use activeSelection here
+        className={`App-link ${activeSelection === 'contact' ? 'active-link':''}`} // Use activeSelection here
         href="#contact"
       >
         Contact
@@ -89,7 +89,7 @@ const loadImagesWithDescriptions = () => {
     context.keys().forEach((filePath, index) => {  // 'index' is the loop iteration number
       const pathParts = filePath.replace('./', '').split('/');
       const projectName = pathParts[0];  // This will give you the project name
-      const subFolder = pathParts.length > 2 ? pathParts[1] : 'root';  // Second-level folder or 'root'
+      const subFolder = pathParts.length > 2 ? pathParts[1]:'root';  // Second-level folder or 'root'
       const fileName = pathParts[pathParts.length - 1];  // The file name
       
       // Initialize the project if it doesn't exist
@@ -98,8 +98,8 @@ const loadImagesWithDescriptions = () => {
         const projectDescription = descriptions.projects[index]?.[projectName]?.description || 'No project description available';
         
         projects[projectName] = {
-          description: projectDescription,
-          subFolders: {}
+          description:projectDescription,
+          subFolders:{}
         };
       }
 
@@ -113,10 +113,9 @@ const loadImagesWithDescriptions = () => {
 
       // Add the image with metadata to the subfolder
       projects[projectName].subFolders[subFolder].push({
-        src: context(filePath),
-        name: fileName,
-        description:
-          descriptions[projectName]?.[subFolder]?.[fileName] || 'No description available',
+        src:context(filePath),
+        name:fileName,
+        description:descriptions[projectName]?.[subFolder]?.[fileName] || 'No description available',
       });
     });
 
@@ -149,7 +148,7 @@ function Pictures({images}) {
   // Function to handle going to the previous image
   const goToPrevious = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+      prevIndex === 0 ? images.length - 1:prevIndex - 1
     );
   };
 
@@ -161,9 +160,9 @@ function Pictures({images}) {
   };
 
   const swipeHandler = useSwipeable({
-    onSwipedLeft: goToNext,
-    onSwipedRight: goToPrevious,
-    preventDefaultTouchmoveEvent: true,
+    onSwipedLeft:goToNext,
+    onSwipedRight:goToPrevious,
+    preventDefaultTouchmoveEvent:true,
     trackMouse:false,
   });
 
@@ -316,7 +315,7 @@ function Projects( {sectionsRef} ) {
         <div className = "Project-pictures">
           {!activeTabs[projectName] ? (
             <Pictures images={[project.default_image]}/>
-          ) : (
+          ):(
             <Pictures 
               images={project.subFolders[activeTabs[projectName].toLowerCase()]
                 ?.map(img => safeRequire(img.src)) || []}
@@ -331,7 +330,7 @@ function Projects( {sectionsRef} ) {
             {["Design", "Implementation", "Result"].map((tab) =>
               <a 
                 key = {tab}
-                className = {activeTabs[projectName] === tab ? "active-tab" : ""}
+                className = {activeTabs[projectName] === tab ? "active-tab":""}
                 onClick = {() => handleTabChange(projectName, tab)}
               >
                 {tab}
@@ -418,9 +417,9 @@ function App() {
 
   useEffect(() => {
     const options = { 
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.6, // Adjust as needed
+      root:null,
+      rootMargin:'0px',
+      threshold:0.6, // Adjust as needed
     };
 
     const observer = new IntersectionObserver((entries) => {
