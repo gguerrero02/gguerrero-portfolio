@@ -9,9 +9,9 @@ function DogLogo() {
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="-5 -5 192.24 243.89" className="Dog-logo">
       <g id="Layer_2" data-name="Layer 2">
         <g id="Layer_1-2" data-name="Layer 1">
-          <path class="cls-1" d="M.14,169.28c31.43-1.1,49.65-8.67,66.58-30.54S97.8,67.61,93.92,40.23c-.18-1.27-.47-2.67-1.51-3.42-2-1.42-4.6.58-5.93,2.6a26.8,26.8,0,0,0-4.33,16.88,11.46,11.46,0,0,0,2.33,6.64c2.07,2.38,5.4,3.14,8.52,3.62a99.58,99.58,0,0,0,22.09.94c4.31-.29,8.79-.93,12.35-3.38,4.42-3,6.68-8.27,8.45-13.31,5.76-16.41,8.66-33.65,11.53-50.8,7.06,50.76,8.28,123.77-.86,174.19-1.36,7.49-3,15-6.14,21.92-9.8,22-33.52,36.19-57.59,37.61s-49.28-6-67.48-21.82c-5.2-4.53-8.89-10.87-11.77-18.52a55.77,55.77,0,0,1-3-27.85c1.64-10.94,4.61-22.15,12.65-29.74,6.08-5.74,14-9.11,21.86-12,19.46-7,40.08-11.6,60.75-10.61,29.42,1.41,57.63,11.51,86.37,17.93"/>
-          <path class="cls-1" d="M113.5,90.16a60.47,60.47,0,0,0-2.73,9.9"/>
-          <path class="cls-1" d="M130.24,87.07a66.14,66.14,0,0,0-3.85,15.22"/>
+          <path className="cls-1" d="M.14,169.28c31.43-1.1,49.65-8.67,66.58-30.54S97.8,67.61,93.92,40.23c-.18-1.27-.47-2.67-1.51-3.42-2-1.42-4.6.58-5.93,2.6a26.8,26.8,0,0,0-4.33,16.88,11.46,11.46,0,0,0,2.33,6.64c2.07,2.38,5.4,3.14,8.52,3.62a99.58,99.58,0,0,0,22.09.94c4.31-.29,8.79-.93,12.35-3.38,4.42-3,6.68-8.27,8.45-13.31,5.76-16.41,8.66-33.65,11.53-50.8,7.06,50.76,8.28,123.77-.86,174.19-1.36,7.49-3,15-6.14,21.92-9.8,22-33.52,36.19-57.59,37.61s-49.28-6-67.48-21.82c-5.2-4.53-8.89-10.87-11.77-18.52a55.77,55.77,0,0,1-3-27.85c1.64-10.94,4.61-22.15,12.65-29.74,6.08-5.74,14-9.11,21.86-12,19.46-7,40.08-11.6,60.75-10.61,29.42,1.41,57.63,11.51,86.37,17.93"/>
+          <path className="cls-1" d="M113.5,90.16a60.47,60.47,0,0,0-2.73,9.9"/>
+          <path className="cls-1" d="M130.24,87.07a66.14,66.14,0,0,0-3.85,15.22"/>
         </g>
       </g>
     </svg>
@@ -25,9 +25,9 @@ function MenuButton({ toggleSidebar }) {
         <svg className="Menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 104.1 81.08">
           <g id="Layer_2" data-name="Layer 2">
             <g id="Layer_1-2" data-name="Layer 1">
-              <line class="cls-1" x1="5.5" y1="5.5" x2="98.6" y2="5.5"/>
-              <line class="cls-1" x1="5.5" y1="40.54" x2="98.6" y2="40.54"/>
-              <line class="cls-1" x1="5.5" y1="75.58" x2="98.6" y2="75.58"/>
+              <line className="cls-1" x1="5.5" y1="5.5" x2="98.6" y2="5.5"/>
+              <line className="cls-1" x1="5.5" y1="40.54" x2="98.6" y2="40.54"/>
+              <line className="cls-1" x1="5.5" y1="75.58" x2="98.6" y2="75.58"/>
             </g>
           </g>
         </svg>
@@ -78,26 +78,85 @@ function importAllImages(r) {
   return r.keys().map(r);
 }
 
-const nightswipe_img = importAllImages(require.context('./assets/project_images/nightswipe', false, /\.(png|jpe?g|svg)$/));
+const loadImagesWithDescriptions = () => {
+  const descriptions = require('./assets/project_images/descriptions.json');
+  // console.log(JSON.stringify(descriptions, null, 2));
+
+  // Helper to organize files into projects and subfolders
+  const importImagesRecursively = (context) => {
+    const projects = {};
+
+    context.keys().forEach((filePath, index) => {  // 'index' is the loop iteration number
+      const pathParts = filePath.replace('./', '').split('/');
+      const projectName = pathParts[0];  // This will give you the project name
+      const subFolder = pathParts.length > 2 ? pathParts[1] : 'root';  // Second-level folder or 'root'
+      const fileName = pathParts[pathParts.length - 1];  // The file name
+      
+      // Initialize the project if it doesn't exist
+      if (!projects[projectName]) {
+        // Use 'index' to fetch the project description from descriptions.projects
+        const projectDescription = descriptions.projects[index]?.[projectName]?.description || 'No project description available';
+        
+        projects[projectName] = {
+          description: projectDescription,
+          subFolders: {}
+        };
+      }
+
+
+      // console.log(project + JSON.stringify(descriptions.projects[project]), null, 2))z
+
+      // Initialize the subfolder if it doesn't exist
+      if (!projects[projectName].subFolders[subFolder]) {
+        projects[projectName].subFolders[subFolder] = [];
+      }
+
+      // Add the image with metadata to the subfolder
+      projects[projectName].subFolders[subFolder].push({
+        src: context(filePath),
+        name: fileName,
+        description:
+          descriptions[projectName]?.[subFolder]?.[fileName] || 'No description available',
+      });
+    });
+
+    return projects;
+  };
+
+  // Statically include all images in the `project_images` directory and its subdirectories
+  const projectFolders = require.context(
+    './assets/project_images',
+    true, // Recursively include subfolders
+    /\.(png|jpe?g|svg)$/ // Match image file extensions
+  );
+
+  return importImagesRecursively(projectFolders);
+};
+
+
+
+const imgsWithDescs = loadImagesWithDescriptions();
+// console.log(imgsWithDescs);
+// const nightswipe_img = importAllImages(require.context('./assets/project_images/nightswipe', false, /\.(png|jpe?g|svg)$/));
 // const il_img = importAllImages(require.context('./assets/project_images/infinite_library', false, /\.(png|jpe?g|svg)$/));
 
 
-function Pictures() {
-
+function Pictures({images}) {
+  console.log(images);
   // State to keep track of the currently displayed image index
   const [currentIndex, setCurrentIndex] = useState(0);
 
   // Function to handle going to the previous image
   const goToPrevious = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? nightswipe_img.length - 1 : prevIndex - 1
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
     );
   };
 
   // Function to handle going to the next image
   const goToNext = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === nightswipe_img.length - 1 ? 0 : prevIndex + 1
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1
     );
   };
 
@@ -113,8 +172,8 @@ function Pictures() {
         
 
       <div className = "Pictures-image" {...swipeHandler}>
-        
-        <img src={nightswipe_img[currentIndex]} alt="gallery"/>
+        {console.log("current src: ", images[currentIndex])}
+        <img src={images[currentIndex]} alt="no pictures found"/>
       </div>
         
 
@@ -125,13 +184,13 @@ function Pictures() {
                 <g id="Layer_2" data-name="Layer 2">
                     <g id="Layer_1-2" data-name="Layer 1">
                         <path d="M41.5,1A40.5,40.5,0,1,1,1,41.5,40.55,40.55,0,0,1,41.5,1m0-1A41.5,41.5,0,1,0,83,41.5,41.5,41.5,0,0,0,41.5,0Z"/>
-                        <polyline class="cls-1" points="52.12 55.79 23.62 41.5 52.12 27.21"/>
+                        <polyline className="cls-1" points="52.12 55.79 23.62 41.5 52.12 27.21"/>
                     </g>
                 </g>
             </svg>
           </button>
         </div>
-        {nightswipe_img.map((_, index) => (
+        {images.map((_, index) => (
           <span
             key={index}
             style={{
@@ -151,7 +210,7 @@ function Pictures() {
                 <g id="Layer_1-2">
                   <path d="M41.5,1C19.1,1,1,19.1,1,41.5S19.1,82,41.5,82S82,63.9,82,41.5C82,19.1,63.9,1,41.5,1 M41.5,0C64.4,0,83,18.6,83,41.5
                     S64.4,83,41.5,83S0,64.4,0,41.5S18.6,0,41.5,0z"/>
-                  <polyline class="st0" points="30.9,55.8 59.4,41.5 30.9,27.2"/>
+                  <polyline className="st0" points="30.9,55.8 59.4,41.5 30.9,27.2"/>
                 </g>
               </g>
             </svg>
@@ -217,34 +276,117 @@ function About( {sectionsRef}) {
   )
 }
 
+
 function Projects( {sectionsRef} ) {
+
+  const data = require('./assets/project_images/descriptions.json');
+  console.log("raw data:", data.projects);
+
+  const projects = loadImagesWithDescriptions(); 
+  const [activeTabs, setActiveTabs] = useState({});
+  const [filteredContent, setFilteredContent] = useState([]);
+  const handleTabChange = (projectName, tab) => {
+    setActiveTabs(prev => ({
+      ...prev,
+      [projectName]: tab
+    }));
+
+  };
+
+  const placeholderImage = require("./assets/project_images/default_image.png");
+
+  const safeRequire = (imagePath) => {
+    try {
+      return require('.' + imagePath);
+    } catch (error) {
+      console.log('Image not found: ${imagePath}');
+      return placeholderImage;
+    }
+  }
+
+  let proj = Object.keys(data.projects[0]).map((projectName) => {
+    const project = data.projects[0][projectName];
+    return(
+
+      
+        <div className = "Project-grid">
+          <div className = "Project-name">
+          <h1>{projectName}</h1>
+        </div>
+        <div className = "Project-pictures">
+          {!activeTabs[projectName] ? (
+            <Pictures images={[project.default_image]}/>
+          ) : (
+            <Pictures 
+              images={project.subFolders[activeTabs[projectName].toLowerCase()]
+                ?.map(img => safeRequire(img.src)) || []}
+            />         
+          )}
+        </div>
+        <div className = "Project-description">
+          <p>{project.description || "no description"}</p>
+        </div>
+        <div className = "Project-tabs">
+          <ul>
+            {["Design", "Implementation", "Result"].map((tab) =>
+              <a 
+                key = {tab}
+                className = {activeTabs[projectName] === tab ? "active-tab" : ""}
+                onClick = {() => handleTabChange(projectName, tab)}
+              >
+                {tab}
+              </a>
+            )}
+          </ul>
+        </div>
+      </div>
+      
+        
+    );
+  });
+
+
   return (
     <div
       id="projects"
       ref={(el) => (sectionsRef.current[1] = el)}
       className="App-project"
     >
-      <div class = "Project-grid">
-        <div class = "Project-name">
-          <h1>NightSwipe</h1>
-        </div>
-        <div class = "Project-pictures">
-          <Pictures/>
-        </div>
-        <div class = "Project-description">
-          <p>This is the description. This is Nightswipe, an app dedicated to ending long, boring conversations about what to do with your evening.</p>
-        </div>
-        <div class = "Project-tabs">
-          <ul>
-            <a>Design</a>
-            <a>Implementation</a>
-            <a>Result</a>
-          </ul>
-        </div>
-      </div>
-      
-      
+      {proj}
     </div>
+    // <div
+    //   id="projects"
+    //   ref={(el) => (sectionsRef.current[1] = el)}
+    //   className="App-project"
+    // >
+    
+    //   <div className = "Project-grid">
+    //     <div className = "Project-name">
+    //     <h1></h1>
+    //   </div>
+    //   <div className = "Project-pictures">
+        
+    //   </div>
+    //   <div className = "Project-description">
+    //     <p></p>
+    //   </div>
+    //   <div className = "Project-tabs">
+    //     <ul>
+    //       {["Design", "Implementation", "Result"].map((tab) =>
+    //         <a 
+    //           key = {tab}
+    //           className = {activeTab === tab ? "active-tab" : ""}
+    //           onClick = {() => handleTabChange(tab)}
+    //         >
+    //           {tab}
+    //         </a>
+    //       )}
+    //     </ul>
+    //   </div>
+    // </div>
+    
+      
+    // </div>
   )
 }
 

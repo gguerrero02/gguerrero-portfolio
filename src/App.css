@@ -1,3 +1,7 @@
+.App {
+  overflow-x:hidden;
+}
+
 .App-header {
   /* text-align: left; */
   position:fixed;
@@ -234,11 +238,9 @@
   margin-left:-12.5vmin;
 
   background-image:linear-gradient(to bottom right,#B0D7FF, #5E88B3);
-
+  
   align-items:bottom;
-
 }
-
 
 .Circular-image {
   height: 25vmin;
@@ -285,8 +287,6 @@
   stroke-linecap: round;
   stroke-linejoin: round;
 }
-
-
 
 .g {
   stroke-dasharray: 1500;
@@ -402,17 +402,15 @@
   text-align:justify;
 }
 
-/* .App-project {
+.App-project {
   min-height:100vh;
   width:fill;
-} */
+}
 
 .Project-grid {
   display: grid;
   gap:10px;
   width: 100%;
-  height: 100vh;
-  max-height:100vh;
   grid-template-columns: 30vw auto; /* 2 equal columns */
   grid-template-rows: auto 1fr;    /* Defines a 2-row grid */
 }
@@ -431,7 +429,7 @@
 }
 
 .Pictures {
-  min-height: 100%;
+
   min-width: 100%;
   display:flex;
   flex-direction: column;
@@ -467,14 +465,15 @@
 
 
 .Pictures-image {
-  background-color:#17293A;
+  background-image:linear-gradient(to bottom right,#B0D7FF, #5E88B3);
   display:flex;
   height: 50vh; /* Occupies half the height of the parent */
-  width: fill; /* Dynamic width */
+  width: 100%; /* Dynamic width */
   /* flex-shrink: 0; Prevents it from shrinking */
   justify-content:center;
   transition: "transform 0.3s ease-in-out";
   transform:'translateX(-100)';
+  border-radius: 10px;
 }
 .Pictures-image img {
   /* max-width:100%;
@@ -524,10 +523,19 @@
   font-size: larger;
 }
 
+.Project-tabs a:hover {
+  cursor:pointer;
+  color:#17293A;
+}
+
+.active-tab {
+  color:#17293A;
+}
+
 @media (max-width: 600px) {
   .Project-grid {
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto 100%;
+    grid-template-rows: auto auto auto auto;
     justify-items:left;
     gap:10px;
 
@@ -539,9 +547,18 @@
     grid-row: 3;
   }
 
+  .Project-tabs a: {
+    text-decoration:none;
+  }
+
+  .Project-tabs a:hover {
+    color:#17293A;
+  }
+
   .Project-pictures {
     grid-column:1;
     grid-row: 4;
+    width:100%;
   }
 }
 
