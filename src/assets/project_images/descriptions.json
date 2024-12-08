@@ -61,6 +61,40 @@
             }
           ]
         }
+      },
+      "11234": {
+        "description": "NightSwipe is an app geared toward people who can't make up their mind",
+        "default_image": "url",
+        "subFolders": {
+          "design": [
+            {
+              "src": "/assets/project_images/nightswipe/design/image.png",
+              "name": "image.png",
+              "description": "NightSwipe began on some letter paper and post-it notes"
+            },
+            { 
+              "src": "/assets/project_images/nightswipe/implementation/right_smile.jpg",
+              "name": "./assets/project_images/nightswipe/implementation/right_smile.jpg",
+              "description": "image 1"
+              
+            }
+          ],
+          "implementation": [
+            { 
+              "src": "/assets/project_images/nightswipe/implementation/right_smile.jpg",
+              "name": "./assets/project_images/nightswipe/implementation/right_smile.jpg",
+              "description": "image 1"
+              
+            }
+          ],
+          "result": [
+            {
+              "src": "url",
+              "name": "image.png",
+              "description": "image 2"
+            }
+          ]
+        }
       }
     }
   ]

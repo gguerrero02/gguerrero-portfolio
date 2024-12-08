@@ -168,11 +168,14 @@ function Pictures({images}) {
 
   return (
     <div className = "Pictures">
-        
 
       <div className = "Pictures-image" {...swipeHandler}>
         {console.log("current src: ", images[currentIndex])}
-        <img src={images[currentIndex]} alt="no pictures found"/>
+        <img src={images[currentIndex].src} alt="no pictures found"/>
+
+        <div className = "Pictures-description"> 
+          <p>{images[currentIndex].description}</p>
+        </div>
       </div>
         
 
@@ -318,7 +321,10 @@ function Projects( {sectionsRef} ) {
           ):(
             <Pictures 
               images={project.subFolders[activeTabs[projectName].toLowerCase()]
-                ?.map(img => safeRequire(img.src)) || []}
+                ?.map(img => ({
+                  src: safeRequire(img.src),
+                  description: img.description
+                })) || []}
             />         
           )}
         </div>
