@@ -514,6 +514,32 @@
   display: none;
 }
 
+.Pictures-info-button button {
+  padding:5px;
+  background:none;
+  border:none;
+  cursor:pointer;
+}
+
+.info-button-svg {
+  height: 30px;
+  width:30px;
+  fill:#E8F4FF;
+  padding: 2px;
+
+}
+
+.info-x-button-svg {
+  height: 25px;
+  width:25px;
+  stroke:#E8F4FF;
+  stroke-width:10px;
+  stroke-linecap:round;
+  padding-right:3px;
+  padding-bottom:5px;
+
+}
+
 /* Desktop hover */
 @media (min-width: 601px) {
   .Pictures-image:hover .Pictures-description {
@@ -529,6 +555,7 @@
     bottom: 10px;
     right: 10px;
     z-index: 11;  /* Above the description overlay */
+    
   }
 
   /* Disable hover effect on mobile */

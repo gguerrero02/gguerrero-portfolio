@@ -180,7 +180,26 @@ function Pictures({images}) {
         </div>
 
         <div className = "Pictures-info-button">
-          <button onClick = {() => setShowDescription(!showDescription)}>info</button>
+          <button onClick = {() => setShowDescription(!showDescription)}>
+          {!showDescription ? (
+      // Info icon
+            <svg className="info-button-svg" xmlns="http://www.w3.org/2000/svg" viewBox="-5 -5 126 126">
+              <g id="Layer_2" data-name="Layer 2">
+                <g id="Layer_1-2" data-name="Layer 1">
+                  <path class="cls-1" d="M58,0a58,58,0,1,0,58,58A58,58,0,0,0,58,0ZM55.08,29a6,6,0,0,1,8.45,8.45,6,6,0,0,1-10.21-4.22A5.71,5.71,0,0,1,55.08,29ZM77,88.74H39v-7H55.3V53H41.42V46H63.85V81.72H77Z"/>
+                </g>
+              </g>
+            </svg>
+          ) : (
+            // X icon (you can replace this with your preferred X icon)
+            <svg className="info-x-button-svg" xmlns="http://www.w3.org/2000/svg" viewBox="-5 -5 126 126">
+              <g>
+                <line x1="0" y1="0" x2="100" y2="100" />
+                <line x1="100" y1="0" x2="0" y2="100" />
+              </g>
+            </svg>
+          )}
+          </button>
         </div>
       </div>
         
