@@ -166,6 +166,8 @@ function Pictures({images}) {
     trackMouse:false,
   });
 
+  const [showDescription, setShowDescription] = useState(false);
+
   return (
     <div className = "Pictures">
 
@@ -173,8 +175,12 @@ function Pictures({images}) {
         {console.log("current src: ", images[currentIndex])}
         <img src={images[currentIndex].src} alt="no pictures found"/>
 
-        <div className = "Pictures-description"> 
+        <div className = {`Pictures-description ${showDescription ? 'show-description' : ''}`}> 
           <p>{images[currentIndex].description}</p>
+        </div>
+
+        <div className = "Pictures-info-button">
+          <button onClick = {() => setShowDescription(!showDescription)}>info</button>
         </div>
       </div>
         
