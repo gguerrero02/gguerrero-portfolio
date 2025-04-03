@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useSwipeable } from "react-swipeable";
 import './App.css';
 import profileImage from './assets/portrait.JPG';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 
 function DogLogo() {
@@ -140,10 +141,17 @@ const imgsWithDescs = loadImagesWithDescriptions();
 // const il_img = importAllImages(require.context('./assets/project_images/infinite_library', false, /\.(png|jpe?g|svg)$/));
 
 
-function Pictures({images}) {
+
+function Pictures({images, resetFlag}) {
   console.log(images);
   // State to keep track of the currently displayed image index
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    console.log("before " + currentIndex);
+    setCurrentIndex(0); // Reset to first image when tab changes
+    console.log("after " + currentIndex);
+  }, [resetFlag]);
 
   // Function to handle going to the previous image
   const goToPrevious = () => {
@@ -168,16 +176,30 @@ function Pictures({images}) {
 
   const [showDescription, setShowDescription] = useState(false);
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
   return (
+    
     <div className = "Pictures">
-
       <div className = "Pictures-image" {...swipeHandler}>
-        {console.log("current src: ", images[currentIndex])}
-        <img src={images[currentIndex].src} alt="no pictures found"/>
 
-        <div className = {`Pictures-description ${showDescription ? 'show-description' : ''}`}> 
+        <div className="image-wrapper">
+          <img src={images[currentIndex].src} alt="app icon"/>
+        </div>
+        
+        <div className = {`Pictures-description ${showDescription ? 'show-description' : ''}`} onClick={openModal}> 
           <p>{images[currentIndex].description}</p>
         </div>
+
+        {isModalOpen && (
+          <div className = "Pictures-modal" onClick={closeModal}>
+            {/* <button onClick={closeModal}> x </button> */}
+            <img src={images[currentIndex].src} alt="app icon"/>
+            <p>Click anywhere to go back</p>
+          </div>
+        )}
 
         <div className = "Pictures-info-button">
           <button onClick = {() => setShowDescription(!showDescription)}>
@@ -303,6 +325,19 @@ function About( {sectionsRef}) {
   )
 }
 
+function GraphicDesign( {sectionsRef}) {
+  const data = require('./assets/project_images/descriptions.json');
+   return (
+    <div
+      ref={(el) => (sectionsRef.current[3] = el)}
+      className="App-project"
+    >
+      <h1> Graphic Design</h1>
+      <p>Since learning how to use Illustrator in high school, I've used it to make graphics for events, educational posters, mockups for websites and applications, and all the icons and graphics you see on this page. Please have a look at some of my creations below!</p>
+      <Pictures images = {data.GraphicDesign.Entries}/>
+    </div>
+   )
+}
 
 function Projects( {sectionsRef} ) {
 
@@ -311,13 +346,28 @@ function Projects( {sectionsRef} ) {
 
   const projects = loadImagesWithDescriptions(); 
   const [activeTabs, setActiveTabs] = useState({});
+  const [resetFlag, setResetFlag] = useState(0);
   const [filteredContent, setFilteredContent] = useState([]);
+  
+  function timeout(delay) {
+    return new Promise( res => setTimeout(res, delay) );
+  }
+  
   const handleTabChange = (projectName, tab) => {
-    setActiveTabs(prev => ({
-      ...prev,
-      [projectName]: tab
-    }));
+    const resetWithDelay = async () => {
+      setResetFlag(prev => (prev === 0 ? 1 : 0)); // Toggle resetFlag
+      await timeout(1); // Wait for 1 second
+    
+      setActiveTabs(prev => ({
+        ...prev,
+        [projectName]: tab
+        
+      }));
+    };
 
+    resetWithDelay();
+
+    
   };
 
   const placeholderImage = require("./assets/project_images/default_image.png");
@@ -338,34 +388,51 @@ function Projects( {sectionsRef} ) {
       
         <div className = "Project-grid">
           <div className = "Project-name">
-          <h1>{projectName}</h1>
+          <h1><a 
+                key = {project.default_image}
+                className = {""}
+                onClick = {() => handleTabChange(projectName, "")}
+              >{projectName}
+              </a>
+              </h1>
         </div>
+        {console.log("default" + project.default_image)}
         <div className = "Project-pictures">
           {!activeTabs[projectName] ? (
-            <Pictures images={[project.default_image]}/>
+            
+            <Pictures images={[{
+              src: safeRequire(project.default_image),
+              description: "cover image"
+            }]}/>
           ):(
             <Pictures 
-              images={project.subFolders[activeTabs[projectName].toLowerCase()]
+              images={project.subFolders[activeTabs[projectName].toLowerCase()].images
                 ?.map(img => ({
                   src: safeRequire(img.src),
                   description: img.description
                 })) || []}
+              resetFlag = {resetFlag} 
             />         
           )}
         </div>
         <div className = "Project-description">
-          <p>{project.description || "no description"}</p>
+          <p>
+            {activeTabs[projectName] && project.subFolders[activeTabs[projectName].toLowerCase()]
+            ? project.subFolders[activeTabs[projectName].toLowerCase()].description
+            : project.description || "no description"}
+            </p>
         </div>
         <div className = "Project-tabs">
           <ul>
-            {["Design", "Implementation", "Result"].map((tab) =>
-              <a 
-                key = {tab}
-                className = {activeTabs[projectName] === tab ? "active-tab":""}
-                onClick = {() => handleTabChange(projectName, tab)}
-              >
-                {tab}
-              </a>
+            {["Design", "Implementation", "Result"].map((tab) => 
+              project.subFolders?.[tab.toLowerCase()] && ( // Check if the tab exists
+                  <a 
+                    className={activeTabs[projectName] === tab ? "active-tab" : ""}
+                    onClick={() => handleTabChange(projectName, tab)}
+                  >
+                    {tab}
+                  </a>
+              )
             )}
           </ul>
         </div>
@@ -481,6 +548,7 @@ function App() {
       
       <div className="App-body">
         <About sectionsRef={sectionsRef} />
+        {/* <GraphicDesign sectionsRef={sectionsRef} /> */}
         <Projects sectionsRef={sectionsRef} />
         <Contact sectionsRef={sectionsRef} />
       </div>
