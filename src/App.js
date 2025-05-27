@@ -37,13 +37,13 @@ function MenuButton({ toggleSidebar }) {
   )
 };
 
-function Sidebar({ activeSection, toggleSidebar }) {
+function Sidebar({ activeSelection}) {
   return (
     <div className="Sidebar">
-      <a className={`nav-link ${activeSection === 'dog' ? 'active-link':''}`} href="#about"><DogLogo/></a>
-      <a className={`nav-link ${activeSection === 'about' ? 'active-link':''}`} href="#about">About</a>
-      <a className={`nav-link ${activeSection === 'projects' ? 'active-link':''}`} href="#projects">Projects</a>
-      <a className={`nav-link ${activeSection === 'contact' ? 'active-link':''}`} href="#contact">Contact</a>
+      <a className={`nav-link ${activeSelection === 'dog' ? 'active-link':''}`} href="#about"><DogLogo/></a>
+      <a className={`nav-link ${activeSelection === 'about' ? 'active-link':''}`} href="#about">About</a>
+      <a className={`nav-link ${activeSelection === 'projects' ? 'active-link':''}`} href="#projects">Projects</a>
+      <a className={`nav-link ${activeSelection === 'contact' ? 'active-link':''}`} href="#contact">Contact</a>
     </div>
   );
 }
@@ -195,8 +195,9 @@ function Pictures({images, resetFlag}) {
 
         {isModalOpen && (
           <div className = "Pictures-modal" onClick={closeModal}>
-            {/* <button onClick={closeModal}> x </button> */}
+            
             <img src={images[currentIndex].src} alt="app icon"/>
+            <p>{images[currentIndex].description}</p>
             <p>Click anywhere to go back</p>
           </div>
         )}
@@ -274,7 +275,7 @@ function About( {sectionsRef}) {
   return (
     <div
       id="about"
-      ref={(el) => (sectionsRef.current[0] = el)}
+      ref={(el) => (sectionsRef.current[1] = el)}
       className="App-intro"
     >
       <div className="Me">
@@ -307,7 +308,7 @@ function About( {sectionsRef}) {
         
       </div>
       <p> 
-          <h1>Hi, I'm Garrett</h1>
+          <h1>Hi, I'm Garrett!</h1>
         
           I'm a born and raised Texan that recently moved to New York. 
           At my core, I love to create. Throughout my life I have always had hobbies where
@@ -342,12 +343,8 @@ function GraphicDesign( {sectionsRef}) {
 function Projects( {sectionsRef} ) {
 
   const data = require('./assets/project_images/descriptions.json');
-  console.log("raw data:", data.projects);
-
-  const projects = loadImagesWithDescriptions(); 
   const [activeTabs, setActiveTabs] = useState({});
   const [resetFlag, setResetFlag] = useState(0);
-  const [filteredContent, setFilteredContent] = useState([]);
   
   function timeout(delay) {
     return new Promise( res => setTimeout(res, delay) );
@@ -366,8 +363,6 @@ function Projects( {sectionsRef} ) {
     };
 
     resetWithDelay();
-
-    
   };
 
   const placeholderImage = require("./assets/project_images/default_image.png");
@@ -383,10 +378,11 @@ function Projects( {sectionsRef} ) {
 
   let proj = Object.keys(data.projects[0]).map((projectName) => {
     const project = data.projects[0][projectName];
-    return(
-
-      
-        <div className = "Project-grid">
+    return (
+      <div className = "Project-grid"
+        id="projects"
+        ref={(el) => (sectionsRef.current[2] = el)}
+      >
           <div className = "Project-name">
           <h1><a 
                 key = {project.default_image}
@@ -436,54 +432,15 @@ function Projects( {sectionsRef} ) {
             )}
           </ul>
         </div>
-      </div>
-      
-        
+      </div>    
     );
   });
 
 
   return (
-    <div
-      id="projects"
-      ref={(el) => (sectionsRef.current[1] = el)}
-      className="App-project"
-    >
+    <div>
       {proj}
     </div>
-    // <div
-    //   id="projects"
-    //   ref={(el) => (sectionsRef.current[1] = el)}
-    //   className="App-project"
-    // >
-    
-    //   <div className = "Project-grid">
-    //     <div className = "Project-name">
-    //     <h1></h1>
-    //   </div>
-    //   <div className = "Project-pictures">
-        
-    //   </div>
-    //   <div className = "Project-description">
-    //     <p></p>
-    //   </div>
-    //   <div className = "Project-tabs">
-    //     <ul>
-    //       {["Design", "Implementation", "Result"].map((tab) =>
-    //         <a 
-    //           key = {tab}
-    //           className = {activeTab === tab ? "active-tab" : ""}
-    //           onClick = {() => handleTabChange(tab)}
-    //         >
-    //           {tab}
-    //         </a>
-    //       )}
-    //     </ul>
-    //   </div>
-    // </div>
-    
-      
-    // </div>
   )
 }
 
@@ -491,14 +448,14 @@ function Contact ( {sectionsRef} ) {
   return (
     <div
       id="contact"
-      ref={(el) => (sectionsRef.current[2] = el)}
+      ref={(el) => (sectionsRef.current[3] = el)}
       className="App-contact"
     >
       <h1>Contact Me</h1>
-      <p><h2>Phone: </h2> (325) 262-6866</p>
-      <p><h2>Email: </h2> garrettecgue@gmail.com</p>
-      <p><a href="https://www.linkedin.com/in/garrettecgue"><h2>Connect with me on LinkedIn!</h2></a></p>
-      <p><a href="https://www.github.com/garrettguerrero"><h2>Check out my GitHub!</h2></a></p>
+      <p>Phone: (325) 262-6866</p>
+      <p>Email: garrettecgue@gmail.com</p>
+      <p><a href="https://www.linkedin.com/in/garrettecgue"><h3>Connect with me on LinkedIn!</h3></a></p>
+      <p><a href="https://www.github.com/garrettguerrero"><h3>Check out my GitHub!</h3></a></p>
 
     </div>
   )
@@ -544,12 +501,17 @@ function App() {
     <div className="App">
       
       <Navbar activeSelection={activeSelection} />
-      {sidebarVisible && <Sidebar activeSection={activeSelection} toggleSidebar={toggleSidebar  } />}
+      {sidebarVisible && <Sidebar activeSection={activeSelection} />}
       
       <div className="App-body">
         <About sectionsRef={sectionsRef} />
         {/* <GraphicDesign sectionsRef={sectionsRef} /> */}
-        <Projects sectionsRef={sectionsRef} />
+        <div id = "projects"
+             ref = {(el) => (sectionsRef.current[2] = el)}
+             >
+          <Projects sectionsRef={sectionsRef} />
+        </div>
+        
         <Contact sectionsRef={sectionsRef} />
       </div>
     </div>

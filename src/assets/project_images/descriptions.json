@@ -2,51 +2,86 @@
   "projects": [
     {
       "NightSwipe": {
-        "description": "NightSwipe is an app geared toward helping you and your friends decide on your evening plans",
+        "description": "Stuck trying to make plans with your friends? Let NightSwipe take the pressure off! Simply join a group, swipe on restaurants, events, and attractions, and let NightSwipe’s smart algorithm handle the rest. In minutes, you’ll have a personalized itinerary full of food, fun, and places to explore that everyone will love.",
         "default_image": "/assets/project_images/nightswipe/NSIcon.png",
         "subFolders": {
           "design": {
-            "description": "The beginning stages of NightSwipe included lots of market research to esure our project was healingpin the", 
+            "description": "NightSwipe’s design went through a few cycles before it came time to implement. After our initial proposal, we started to jot down ideas on sticky notes before drawing screens out on printer paper. After we solidified what screens we wanted to create, we drafted a prototype in Adobe Illustrator which gave us a feel for the fonts and color palettes we would be using in the final design.", 
             "images": [
               {
                 "src": "/assets/project_images/nightswipe/design/image.png",
                 "name": "image.png",
-                "description": "NightSwipe began on some letter paper and post-it notes"
+                "description": "We developed lo-fi prototypes on printer paper and post-it notes. This gave us a physical blueprint for us to work from."
+              },
+              {
+                "src": "/assets/project_images/nightswipe/design/flow_1.png",
+                "name": "flow_1.png",
+                "description": "High level flowchart of the app."
+              },
+              {
+                "src": "/assets/project_images/nightswipe/design/flow_2.png",
+                "name": "flow_2.png",
+                "description": "Flowchart featuring pages within the app."
               },
               {
                 "src": "/assets/project_images/nightswipe/design/screenshot2.png",
                 "name": "screenshot2.png",
-                "description": "After we had created our mental model on paper, we turned to Adobe Illustrator to create mockups of each screen"
+                "description": "After we had curated the mental model of the app, we turned to Adobe Illustrator to create mockups of each screen"
               },
               {
                 "src": "/assets/project_images/nightswipe/design/screenshot3.png",
                 "name": "screenshot3.png",
-                "description": " more palpable way using Adobe Illustrator"
+                "description": "We played with different color palletes to find the right fit."
               }
             ]
           },
           "implementation": {
-            "description": "implementation description", 
+            "description": "We Implemented our design for iOS in Swift, utilizing a Firebase backend to store basic user information and curate the itinerary to be displayed on the frontend. To gather restaurant and entertainment venue details, we used a Yelp API. To collaborate on this project, we used GitHub and followed an Agile development cycle. Throughout development, we regularly demonstrated our work to peers and stakeholders and performed user studies to assist in determining necessary improvements.", 
             "images": [
-              { 
-                "src": "/assets/project_images/nightswipe/implementation/right_smile.jpg",
-                "name": "./assets/project_images/nightswipe/implementation/right_smile.jpg",
-                "description": "image 1"
+              {
+                "src": "/assets/project_images/nightswipe/implementation/tech_stack.png",
+                "name": "tech_stack.png",
+                "description": "Our stack consisted of a Swift frontend, utilizing a Firebase backend and Yelp API."
               },
               { 
-                "src": "/assets/project_images/nightswipe/implementation/right_smile.jpg",
-                "name": "./assets/project_images/nightswipe/implementation/right_smile.jpg",
-                "description": "trying out this thing"
+                "src": "/assets/project_images/nightswipe/implementation/style_guide.png",
+                "name": "./assets/project_images/nightswipe/implementation/style_guide.png",
+                "description": "An important aspect of implementation was that everyone had a strong grasp of the app's style during development. I created functions for commonly used items with guidelines for how to use them in this style guide."
               }
             ]
           },
           "result": {
-            "description": "result description", 
+            "description": "We were able to create an application that flowed well, looked good, and, most of all, worked! The app was well received by its users and we plan to continue development into the future!", 
             "images": [
               {
-                "src": "url",
-                "name": "image.png",
-                "description": "image 2"
+                "src": "/assets/project_images/nightswipe/result/pref.png",
+                "name": "pref.png",
+                "description": "Set preferences for dietary or physical restrictions"
+              },
+              {
+                "src": "/assets/project_images/nightswipe/result/create.png",
+                "name": "create.png",
+                "description": "Create a party by selecting and ordering multiple activity groups"
+              },
+              {
+                "src": "/assets/project_images/nightswipe/result/swipe.png",
+                "name": "swipe.png",
+                "description": "Ready, set, SWIPE"
+              },
+              {
+                "src": "/assets/project_images/nightswipe/result/itinerary.png",
+                "name": "itinerary.png",
+                "description": "NightSwipe Provided Itinerary"
+              },
+              {
+                "src": "/assets/project_images/nightswipe/result/poster.png",
+                "name": "poster.png",
+                "description": "Again using Illustrator, we compiled our findings and preesented them at student research expos."
+              },
+              {
+                "src": "/assets/project_images/nightswipe/result/team.jpg",
+                "name": "./assets/project_images/nightswipe/result/team.jpg",
+                "description": "My amazing team and me showing off NightSwipe!"
               }
             ]
           }
@@ -54,87 +89,56 @@
       },
       
       "Infinite Library": {
-        "description": "Check it out",
+        "description": "Follow Alex, keeper of the Infinite Library as she wards off the mysterious force that threatens the birthplace of all knowledge. Tight platforming and curious puzzles abound as you traverse the library and discover the powers of books strewn about. Uncover the mysteries of the library and help Alex save the Library!",
         "default_image": "/assets/project_images/infinite_library/ILIcon.png",
         "subFolders": {
           "design": {
-            "description": "design description", 
+            "description": "The inspiration for this game came from the mind of Samantha Braswell who drew this beautiful illustration that set the tone for the entire project. What lay within the walls of this mysterious library?", 
             "images": [
               {
-                "src": "url",
-                "name": "image.png",
-                "description": "This could be a really long description. Or not..."
+                "src": "/assets/project_images/infinite_library/design/inspiration.png",
+                "name": "inspiration.png",
+                "description": "From the mind of Samantha Braswell"
               }
             ]
           },
           "implementation": {
-            "description": "implementation description", 
+            "description": "Implentation took place largely in Unreal Engine. Assets were designed in 3D modeling software like Blender and Maya while 2D textures and UI elements were designed in Illustrator.", 
             "images": [
               {
-                "src": "url",
-                "name": "image.png",
-                "description": "image 1"
+                "src": "/assets/project_images/infinite_library/implementation/unreal.png",
+                "name": "unreal.png",
+                "description": "Infinite Library was created largely in Unreal"
               }
             ]
           },
           "result": {
-            "description": "results description", 
+            "description": "My main contributions to this project are held within the UI/UX panels of the game. I created UI elements in Illustrator that I implemented in Unreal Engine. Thanks to the hard work and dedication of all seven members of our team, we were awarded Best in Game Design at Texas A&M’s Viz-A-Go-Go event! ", 
             "images": [
               {
-                "src": "url",
-                "name": "image.png",
-                "description": "image 2"
-              }
-            ]
-          }
-        }
-      },
-      "another project": {
-        "description": "NightSwipe is an app geared toward helping you and your friends decide on your evening plans",
-        "default_image": "/assets/project_images/nightswipe/NSIcon.png",
-        "subFolders": {
-          "design": {
-            "description": "design description", 
-            "images": [
-              {
-                "src": "/assets/project_images/nightswipe/design/image.png",
-                "name": "image.png",
-                "description": "NightSwipe began on some letter paper and post-it notes"
+                "src": "/assets/project_images/infinite_library/result/home.png",
+                "name": "home.png",
+                "description": "Home Menu"
               },
-              { 
-                "src": "/assets/project_images/nightswipe/implementation/right_smile.jpg",
-                "name": "./assets/project_images/nightswipe/implementation/right_smile.jpg",
-                "description": "image 1"
-              }
-            ]
-          },
-          "b": {
-            "description": "design description", 
-            "images": [
               {
-                "src": "/assets/project_images/nightswipe/design/image.png",
-                "name": "image.png",
-                "description": "NightSwipe began on some letter paper and post-it notes"
+                "src": "/assets/project_images/infinite_library/result/pause.png",
+                "name": "Pause.png",
+                "description": "Pause Menu"
               },
-              { 
-                "src": "/assets/project_images/nightswipe/implementation/right_smile.jpg",
-                "name": "./assets/project_images/nightswipe/implementation/right_smile.jpg",
-                "description": "image 1"
-              }
-            ]
-          },
-          "result": {
-            "description": "design description", 
-            "images": [
               {
-                "src": "/assets/project_images/nightswipe/design/image.png",
-                "name": "image.png",
-                "description": "NightSwipe began on some letter paper and post-it notes"
+                "src": "/assets/project_images/infinite_library/result/hud.png",
+                "name": "hud.png",
+                "description": "HUD"
               },
-              { 
-                "src": "/assets/project_images/nightswipe/implementation/right_smile.jpg",
-                "name": "./assets/project_images/nightswipe/implementation/right_smile.jpg",
-                "description": "image 1"
+              {
+                "src": "/assets/project_images/infinite_library/result/achievements.png",
+                "name": "achievements.png",
+                "description": "Achievements"
+              },
+              {
+                "src": "/assets/project_images/infinite_library/result/viz.png",
+                "name": "viz.png",
+                "description": "A few of our talented team members accepting a Best in Game Design award!"
               }
             ]
           }

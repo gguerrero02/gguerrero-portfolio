@@ -87,10 +87,10 @@
 
 .Sidebar {
 
-  margin-top:-10vh;
+  
   padding-top:7px;
   padding-bottom:7px;
-  position:sticky;
+  position:fixed;
   top:0;
   left:0;
   width:100vw;
@@ -507,7 +507,7 @@
 }
 
 .Pictures-modal img {
-  max-height: 85%;
+  max-height: 70vh;
   max-width: 85%;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -687,7 +687,7 @@
   display:inline;
 } */
 
-.App-contact h2{
+.App-contact h3{
   display:inline;
 }
 
@@ -696,6 +696,7 @@
 }
 
 .App-contact a{
+  color:#5E88B3;
   text-decoration:none;
 }
 
